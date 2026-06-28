@@ -1,0 +1,35 @@
+# ============================================
+# Docker Ignore - Không copy vào Docker image
+# ============================================
+
+# Git
+.git
+.gitignore
+
+# Docker files (tránh vòng lặp)
+Dockerfile
+docker-compose.yml
+docker/
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Postman
+.postman/
+postman/
+*.postman_collection.json
+
+# Temp & Debug files
+temp_*.php
+tmp_*.txt
+debug-*.txt
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Logs (sẽ mount volume riêng)
+storage/logs/*.log
