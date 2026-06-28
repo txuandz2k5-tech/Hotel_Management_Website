@@ -1,0 +1,420 @@
+[2026-04-18 09:36:41] ERROR: Login error
+Error in firstWhere clause: Table 'web_hotel_mngt.accounts_account' doesn't exist
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\AuthController.php(24): Shared\Models\BaseModel->firstWhere('TenTaiKhoan', '=')
+#1 [internal function]: Api\Controllers\AuthController->login()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 10:12:54] ERROR: Error in GuestController::store
+Error creating record: Unknown column 'name' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\GuestController.php(95): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\GuestController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 10:13:54] ERROR: Error in GuestController::store
+Error creating record: Unknown column 'name' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\GuestController.php(95): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\GuestController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 10:18:30] ERROR: Error in GuestController::store
+Error creating record: Unknown column 'name' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\GuestController.php(95): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\GuestController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 10:21:16] ERROR: Error in GuestController::store
+Error creating record: Unknown column 'DiaChiKhachHang' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Models\Guest.php(92): Shared\Models\BaseModel->create(Array)
+#1 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\GuestController.php(95): Shared\Models\Guest->create(Array)
+#2 [internal function]: Api\Controllers\GuestController->store()
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#5 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#6 {main}
+[2026-04-18 10:24:13] ERROR: Error in GuestController::store
+Error creating record: Unknown column 'DiaChiKhachHang' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Models\Guest.php(92): Shared\Models\BaseModel->create(Array)
+#1 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\GuestController.php(95): Shared\Models\Guest->create(Array)
+#2 [internal function]: Api\Controllers\GuestController->store()
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#5 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#6 {main}
+[2026-04-18 10:24:15] ERROR: Error in GuestController::store
+Error creating record: Unknown column 'DiaChiKhachHang' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Models\Guest.php(92): Shared\Models\BaseModel->create(Array)
+#1 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\GuestController.php(95): Shared\Models\Guest->create(Array)
+#2 [internal function]: Api\Controllers\GuestController->store()
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#5 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#6 {main}
+[2026-04-18 15:09:22] ERROR: Error in GuestController::destroy
+Error deleting record: Cannot delete or update a parent row: a foreign key constraint fails (`web_hotel_mngt`.`hotelservice_servicesused`, CONSTRAINT `FK_BookingId_ServicesUsed` FOREIGN KEY (`MaDatPhong`) REFERENCES `bookings_booking` (`MaDatPhong`) ON DELETE NO ACTION ON UPDATE CASCA)
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\GuestController.php(158): Shared\Models\BaseModel->delete('1')
+#1 [internal function]: Api\Controllers\GuestController->destroy()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 15:47:28] ERROR: Error in GuestController::update
+Error updating record: Unknown column 'id' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Models\Guest.php(100): Shared\Models\BaseModel->update('2', Array)
+#1 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\GuestController.php(128): Shared\Models\Guest->update('2', Array)
+#2 [internal function]: Api\Controllers\GuestController->update()
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#5 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#6 {main}
+[2026-04-18 16:52:15] ERROR: Error in ServiceController::index
+Error paginating records: Table 'web_hotel_mngt.services_service' doesn't exist
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\ServiceController.php(15): Shared\Models\BaseModel->paginate(1, 10)
+#1 [internal function]: Api\Controllers\ServiceController->index()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 17:10:37] ERROR: Error in ServiceController::store
+Error creating record: Unknown column 'name' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\ServiceController.php(51): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\ServiceController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 17:11:33] ERROR: Error in ServiceController::store
+Error creating record: Unknown column 'name' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\ServiceController.php(51): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\ServiceController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 17:12:42] ERROR: Error in ServiceController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\ServiceController.php(58): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\ServiceController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 17:15:05] ERROR: Error in EmployeeController::store
+Error creating record: Unknown column 'name' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\EmployeeController.php(37): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\EmployeeController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 17:18:56] ERROR: Error in EmployeeController::store
+Error creating record: Unknown column 'id' in 'field list'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\EmployeeController.php(37): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\EmployeeController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:28:28] ERROR: Error in RoomController::update
+Error updating record: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ? WHERE MaPhong = ?' at line 1
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(80): Shared\Models\BaseModel->update('P101', Array)
+#1 [internal function]: Api\Controllers\RoomController->update()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:28:33] ERROR: Error in RoomController::update
+Error updating record: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ? WHERE MaPhong = ?' at line 1
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(80): Shared\Models\BaseModel->update('P101', Array)
+#1 [internal function]: Api\Controllers\RoomController->update()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:28:36] ERROR: Error in RoomController::update
+Error updating record: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ? WHERE MaPhong = ?' at line 1
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(80): Shared\Models\BaseModel->update('P101', Array)
+#1 [internal function]: Api\Controllers\RoomController->update()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:33:23] ERROR: Error in RoomController::store
+Error creating record: Cannot add or update a child row: a foreign key constraint fails (`web_hotel_mngt`.`rooms_room`, CONSTRAINT `FK_RoomTypeID_Room` FOREIGN KEY (`MaLoaiPhong`) REFERENCES `rooms_roomtype` (`MaLoaiPhong`) ON DELETE CASCADE ON UPDATE CASCADE)
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:33:25] ERROR: Error in RoomController::store
+Error creating record: Cannot add or update a child row: a foreign key constraint fails (`web_hotel_mngt`.`rooms_room`, CONSTRAINT `FK_RoomTypeID_Room` FOREIGN KEY (`MaLoaiPhong`) REFERENCES `rooms_roomtype` (`MaLoaiPhong`) ON DELETE CASCADE ON UPDATE CASCADE)
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:35:05] ERROR: Error in RoomController::store
+Error creating record: Cannot add or update a child row: a foreign key constraint fails (`web_hotel_mngt`.`rooms_room`, CONSTRAINT `FK_RoomTypeID_Room` FOREIGN KEY (`MaLoaiPhong`) REFERENCES `rooms_roomtype` (`MaLoaiPhong`) ON DELETE CASCADE ON UPDATE CASCADE)
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:37:01] ERROR: Error in RoomController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:37:16] ERROR: Error in RoomController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:37:17] ERROR: Error in RoomController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:37:23] ERROR: Error in RoomController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:37:27] ERROR: Error in RoomController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:37:43] ERROR: Error in RoomController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:37:45] ERROR: Error in RoomController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:40:21] ERROR: Error in RoomController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:40:22] ERROR: Error in RoomController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:40:34] ERROR: Error in RoomController::store
+Error creating record: Duplicate entry '' for key 'PRIMARY'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(64): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:44:16] ERROR: Error in RoomController::store
+Error creating record: Cannot add or update a child row: a foreign key constraint fails (`web_hotel_mngt`.`rooms_room`, CONSTRAINT `FK_RoomTypeID_Room` FOREIGN KEY (`MaLoaiPhong`) REFERENCES `rooms_roomtype` (`MaLoaiPhong`) ON DELETE CASCADE ON UPDATE CASCADE)
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(74): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\RoomController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:48:22] ERROR: Error in RoomController::update
+Error updating record: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ? WHERE MaPhong = ?' at line 1
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(106): Shared\Models\BaseModel->update('P101', Array)
+#1 [internal function]: Api\Controllers\RoomController->update()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:48:50] ERROR: Error in RoomController::update
+Error updating record: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ? WHERE MaPhong = ?' at line 1
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(106): Shared\Models\BaseModel->update('P109', Array)
+#1 [internal function]: Api\Controllers\RoomController->update()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 20:49:01] ERROR: Error in RoomController::update
+Error updating record: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= ? WHERE MaPhong = ?' at line 1
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\RoomController.php(106): Shared\Models\BaseModel->update('P109', Array)
+#1 [internal function]: Api\Controllers\RoomController->update()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 21:22:46] ERROR: Error in BookingController::store
+Error creating record: Cannot add or update a child row: a foreign key constraint fails (`web_hotel_mngt`.`bookings_booking`, CONSTRAINT `fk_booking_roomtype` FOREIGN KEY (`MaLoaiPhong`) REFERENCES `rooms_roomtype` (`MaLoaiPhong`))
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\BookingController.php(86): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\BookingController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 21:28:46] ERROR: Error in BookingController::store
+Error finding record: Table 'web_hotel_mngt.room_types_roomtype' doesn't exist
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\BookingController.php(89): Shared\Models\BaseModel->find(1)
+#1 [internal function]: Api\Controllers\BookingController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 21:28:48] ERROR: Error in BookingController::store
+Error finding record: Table 'web_hotel_mngt.room_types_roomtype' doesn't exist
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\BookingController.php(89): Shared\Models\BaseModel->find(1)
+#1 [internal function]: Api\Controllers\BookingController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 21:29:23] ERROR: Error in BookingController::store
+Error finding record: Table 'web_hotel_mngt.room_types_roomtype' doesn't exist
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\BookingController.php(89): Shared\Models\BaseModel->find('DFLUXE')
+#1 [internal function]: Api\Controllers\BookingController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 21:29:33] ERROR: Error in BookingController::store
+Error finding record: Table 'web_hotel_mngt.room_types_roomtype' doesn't exist
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\BookingController.php(89): Shared\Models\BaseModel->find('DFLUXE')
+#1 [internal function]: Api\Controllers\BookingController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 21:29:40] ERROR: Error in BookingController::store
+Error finding record: Table 'web_hotel_mngt.room_types_roomtype' doesn't exist
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\BookingController.php(89): Shared\Models\BaseModel->find('DELUXE')
+#1 [internal function]: Api\Controllers\BookingController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 21:46:05] ERROR: Error in BookingController::store
+Error finding record: Table 'web_hotel_mngt.room_types_roomtype' doesn't exist
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\BookingController.php(89): Shared\Models\BaseModel->find('DELUXE')
+#1 [internal function]: Api\Controllers\BookingController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 21:46:07] ERROR: Error in BookingController::store
+Error finding record: Table 'web_hotel_mngt.room_types_roomtype' doesn't exist
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\BookingController.php(89): Shared\Models\BaseModel->find('DELUXE')
+#1 [internal function]: Api\Controllers\BookingController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-18 21:47:03] ERROR: Error in BookingController::store
+Error finding record: Table 'web_hotel_mngt.room_types_roomtype' doesn't exist
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\BookingController.php(89): Shared\Models\BaseModel->find('DELUXE')
+#1 [internal function]: Api\Controllers\BookingController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-19 16:22:08] ERROR: Error in EmployeeController::store
+Error creating record: Duplicate entry '' for key 'CMND_CCCD'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\EmployeeController.php(73): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\EmployeeController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-19 16:23:02] ERROR: Error in EmployeeController::store
+Error creating record: Duplicate entry '' for key 'CMND_CCCD'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\EmployeeController.php(73): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\EmployeeController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-19 16:23:03] ERROR: Error in EmployeeController::store
+Error creating record: Duplicate entry '' for key 'CMND_CCCD'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\EmployeeController.php(73): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\EmployeeController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-19 16:23:05] ERROR: Error in EmployeeController::store
+Error creating record: Duplicate entry '' for key 'CMND_CCCD'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\EmployeeController.php(73): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\EmployeeController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-19 16:23:06] ERROR: Error in EmployeeController::store
+Error creating record: Duplicate entry '' for key 'CMND_CCCD'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\EmployeeController.php(73): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\EmployeeController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-19 16:24:25] ERROR: Error in EmployeeController::store
+Error creating record: Duplicate entry '' for key 'CMND_CCCD'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\EmployeeController.php(73): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\EmployeeController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-19 16:24:27] ERROR: Error in EmployeeController::store
+Error creating record: Duplicate entry '' for key 'CMND_CCCD'
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\EmployeeController.php(73): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\EmployeeController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}
+[2026-04-19 16:30:17] ERROR: Error in EmployeeController::store
+Error creating record: Cannot add or update a child row: a foreign key constraint fails (`web_hotel_mngt`.`hotels_employees`, CONSTRAINT `FK_DepartmentId_Employee` FOREIGN KEY (`MaBoPhan`) REFERENCES `hotels_departments` (`MaBoPhan`) ON DELETE SET NULL ON UPDATE CASCADE)
+#0 C:\xampp\htdocs\Hotel_Management_Website\src\Api\Controllers\EmployeeController.php(75): Shared\Models\BaseModel->create(Array)
+#1 [internal function]: Api\Controllers\EmployeeController->store()
+#2 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(114): call_user_func(Array)
+#3 C:\xampp\htdocs\Hotel_Management_Website\src\Shared\Http\Router.php(54): Shared\Http\Router->handleRoute(Array, Array)
+#4 C:\xampp\htdocs\Hotel_Management_Website\api.php(55): Shared\Http\Router->dispatch()
+#5 {main}

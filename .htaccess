@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteBase /Hotel_Management_Website/
+
+# Bypass rewrite for static assets
+RewriteRule ^(Public/.*)$ $1 [L,NC]
+RewriteRule ^(.*\.(css|js|png|jpg|jpeg|gif|svg|ico))$ $1 [L,NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Route API requests to api.php
+RewriteRule ^api(/.*)?$ api.php [QSA,L]
+
+# Route other requests to index.php (MVC)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]

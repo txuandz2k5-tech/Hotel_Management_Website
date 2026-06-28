@@ -1,0 +1,163 @@
+:root {
+    --bg-dark: #0f172a;
+    --card-bg: #1e293b;
+    --ocean-blue: #0284c7;
+    --ocean-hover: #0369a1;
+    --text-white: #f1f5f9;
+    --input-bg: #334155;
+    --text-muted: #94a3b8;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    padding: 20px;
+}
+
+/* --- PHẦN CHỈNH SỬA: Thu nhỏ khung --- */
+.login-container {
+    background: var(--card-bg);
+    width: 800px;           /* Giảm từ 900px xuống 800px cho gọn */
+    max-width: 95%;         /* Đảm bảo không bị tràn trên màn hình nhỏ */
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+    overflow: hidden;
+}
+
+/* Cột Trái: Ảnh */
+.login-image {
+    flex: 1; /* Giảm tỷ lệ ảnh một chút (từ 1.2 xuống 1) để cân đối */
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.8)), 
+                url('../Picture/hotel.jpg') no-repeat center/cover;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px; /* Giảm padding ảnh */
+    color: white;
+}
+.image-overlay h2 { margin: 0; font-size: 1.8rem; text-shadow: 2px 2px 4px black; }
+.image-overlay p { margin: 5px 0 0; opacity: 0.9; font-size: 0.95rem; }
+
+/* Cột Phải: Form */
+.login-right-side {
+    flex: 1.1; /* Tăng tỷ lệ phần form lên chút để chứa input */
+    padding: 30px; /* Giảm padding từ 40px xuống 30px cho đỡ choán chỗ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- PHẦN DƯỚI ĐÂY GIỮ NGUYÊN (Chỉ chỉnh margin nhỏ lại cho gọn) --- */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 20px; /* Giảm margin tiêu đề */
+}
+
+.login-header i {
+    font-size: 2.5rem; /* Icon nhỏ lại chút */
+    color: var(--ocean-blue);
+    margin-bottom: 5px;
+}
+
+.login-header h1 {
+    color: var(--text-white);
+    font-size: 1.3rem; /* Font chữ tiêu đề nhỏ lại chút */
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.input-group {
+    margin-bottom: 12px; /* QUAN TRỌNG: Giảm khoảng cách input từ 20px xuống 12px để form ngắn lại */
+}
+
+.input-group label {
+    display: block;
+    color: var(--text-white);
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.input-group label i {
+    color: var(--ocean-blue);
+    margin-right: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 12px; /* Giảm padding trong ô input */
+    background: var(--input-bg);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    color: white;
+    font-size: 0.95rem;
+    transition: 0.3s;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: var(--ocean-blue);
+    background: #1e293b;
+}
+
+select.form-control option {
+    background: var(--card-bg);
+    color: white;
+}
+
+.login-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    flex: 2;
+    padding: 10px; /* Nút bấm gọn hơn */
+    background: var(--ocean-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.95rem;
+}
+
+.btn-submit:hover {
+    background: var(--ocean-hover);
+    transform: translateY(-2px);
+}
+
+.btn-back {
+    flex: 1;
+    padding: 10px;
+    background: #475569;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.login-note {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-container { width: 450px; flex-direction: column; }
+    .login-image { display: none; }
+    .login-right-side { padding: 25px; }
+}

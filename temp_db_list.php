@@ -1,0 +1,1 @@
+<?php $mysqli = new mysqli("localhost","root","","web_hotel_mngt",3307); if ($mysqli->connect_error) { die("CONNECT:" . $mysqli->connect_error); } $res = $mysqli->query("SHOW TABLES"); while ($row = $res->fetch_array()) { echo $row[0] . "\n"; } ?>

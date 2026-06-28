@@ -1,0 +1,7 @@
+# Use this workspace to collaborate
+workspace:
+  id: 35921b00-018b-4dc4-8987-a43cc550956a
+
+localResources:
+  collections:
+    - ..\Hotel_Management_API.postman_collection.json

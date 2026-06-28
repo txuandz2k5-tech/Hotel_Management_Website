@@ -1,0 +1,646 @@
+{
+  "info": {
+    "name": "Hotel Management API",
+    "description": "RESTful API for Hotel Management System with Role-Based Access Control\n\n🔐 AUTHENTICATION:\n- Login with username/password to get JWT token\n- Use Bearer token in Authorization header\n\n👥 ROLES & PERMISSIONS:\n- ADMIN: Full access to all endpoints\n- GUEST: Bookings and Service Orders only\n- STAFF: Limited access (same as guest)\n\n📋 ENDPOINTS:\n- Authentication: Login, logout, get current user\n- Guests: Admin only\n- Bookings: Guest + Admin\n- Rooms/Room Types/Services: View (all), Manage (admin only)\n- Service Orders: Guest + Admin (new feature)\n- Employees/Departments/Payments/Discounts/Accounts: Admin only",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwt_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost/Hotel_Management_Website"
+    },
+    {
+      "key": "jwt_token",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"<username_or_phone>\",\n  \"password\": \"<password>\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "login"]
+            },
+            "description": "Login to get JWT token. Use the same endpoint for admin, staff, and guest. For guest, username is phone number."
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('jwt_token', response.data.token);",
+                  "    console.log('Token saved:', response.data.token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Current User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/me",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "me"]
+            }
+          }
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/auth/logout",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "auth", "logout"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Guests",
+      "item": [
+        {
+          "name": "Get All Guests",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/guests",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "guests"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "per_page",
+                  "value": "10"
+                },
+                {
+                  "key": "search",
+                  "value": "john"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Guest",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"phone\": \"+1234567890\",\n  \"address\": \"123 Main St\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/guests",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "guests"]
+            }
+          }
+        },
+        {
+          "name": "Get Guest by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/guests/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "guests", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Guest",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Smith\",\n  \"email\": \"johnsmith@example.com\",\n  \"phone\": \"+1234567890\",\n  \"address\": \"456 Oak St\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/guests/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "guests", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Guest",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/guests/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "guests", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "Get All Bookings",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/bookings",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "bookings"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "per_page",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Booking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"guest_id\": 1,\n  \"room_id\": 1,\n  \"check_in_date\": \"2024-01-15\",\n  \"check_out_date\": \"2024-01-17\",\n  \"status\": \"confirmed\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/bookings",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "bookings"]
+            }
+          }
+        },
+        {
+          "name": "Get Booking by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/bookings/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "bookings", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Booking",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"checked_in\",\n  \"check_in_date\": \"2024-01-15\",\n  \"check_out_date\": \"2024-01-17\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/bookings/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "bookings", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Booking",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/bookings/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "bookings", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rooms",
+      "item": [
+        {
+          "name": "Get All Rooms",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/rooms",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "rooms"]
+            }
+          }
+        },
+        {
+          "name": "Create Room",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"room_number\": \"101\",\n  \"room_type_id\": 1,\n  \"status\": \"available\",\n  \"price_per_night\": 100.00\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/rooms",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "rooms"]
+            }
+          }
+        },
+        {
+          "name": "Get Room by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/rooms/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "rooms", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Room",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"occupied\",\n  \"price_per_night\": 120.00\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/rooms/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "rooms", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Room",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/rooms/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "rooms", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "item": [
+        {
+          "name": "Get All Services",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/services",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "services"]
+            }
+          }
+        },
+        {
+          "name": "Create Service",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Room Cleaning\",\n  \"description\": \"Daily room cleaning service\",\n  \"price\": 25.00\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/services",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "services"]
+            }
+          }
+        },
+        {
+          "name": "Get Service by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/services/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "services", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Service",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Premium Room Cleaning\",\n  \"price\": 35.00\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/services/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "services", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Service",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/services/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "services", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Employees",
+      "item": [
+        {
+          "name": "Get All Employees",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/employees",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "employees"]
+            }
+          }
+        },
+        {
+          "name": "Create Employee",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Jane Doe\",\n  \"email\": \"jane@hotel.com\",\n  \"phone\": \"+1234567891\",\n  \"department_id\": 1,\n  \"position\": \"Receptionist\"\n \"address\": \"Ba La\"\n \"id_card\": \"000\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/employees",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "employees"]
+            }
+          }
+        },
+        {
+          "name": "Get Employee by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/employees/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "employees", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Employee",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"position\": \"Senior Receptionist\",\n  \"phone\": \"+1234567892\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/employees/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "employees", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Employee",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/employees/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "employees", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Service Orders",
+      "item": [
+        {
+          "name": "Get Service Orders by Booking",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/service-orders?booking_id=1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "service-orders"],
+              "query": [
+                {
+                  "key": "booking_id",
+                  "value": "BD001"
+                }
+              ]
+            },
+            "description": "Get all service orders for a specific booking. Guest/Admin only."
+          }
+        },
+        {
+          "name": "Create Service Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"booking_id\": \"01\",\n  \"service_id\": \"DV01\",\n  \"quantity\": 2\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/service-orders",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "service-orders"]
+            },
+            "description": "Add a service to a booking. Guest/Admin only. booking_id is required to link service order with customer booking."
+          }
+        },
+        {
+          "name": "Get Service Order by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/service-orders/SD202405081423456789",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "service-orders", "SD202405081423456789"]
+            },
+            "description": "Get a specific service order. Guest/Admin only."
+          }
+        },
+        {
+          "name": "Update Service Order Quantity",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"quantity\": 3\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/v1/service-orders/SD202405081423456789",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "service-orders", "SD202405081423456789"]
+            },
+            "description": "Update service order quantity. Guest/Admin only."
+          }
+        },
+        {
+          "name": "Delete Service Order",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/service-orders/SD202405081423456789",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "service-orders", "SD202405081423456789"]
+            },
+            "description": "Remove service from booking. Guest/Admin only."
+          }
+        },
+        {
+          "name": "Get Total Service Cost",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/v1/service-orders/total-cost?booking_id=1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "v1", "service-orders", "total-cost"],
+              "query": [
+                {
+                  "key": "booking_id",
+                  "value": "BD001"
+                }
+              ]
+            },
+            "description": "Get total cost of all services for a booking. Guest/Admin only."
+          }
+        }
+      ]
+    }
+  ]
+}
