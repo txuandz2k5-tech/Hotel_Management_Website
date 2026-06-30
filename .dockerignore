@@ -9,7 +9,6 @@
 # Docker files (tránh vòng lặp)
 Dockerfile
 docker-compose.yml
-docker/
 
 # IDE & Editor
 .vscode/
