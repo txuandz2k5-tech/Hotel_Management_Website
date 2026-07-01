@@ -1,4 +1,4 @@
-name: CI/CD Pipeline - Docker Deploy to Linux
+name: CI/CD Pipeline - Docker Deploy
 
 on:
   push:
@@ -8,32 +8,13 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Deploy to Linux Server via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          port: ${{ secrets.SERVER_PORT }} # Thường là 22
-          script: |
-            # Di chuyển vào thư mục dự án
-            cd /cicd/Hotel_Management_Website
-            
-            # Kéo code mới nhất từ Github (nếu dùng Git trên server)
-            git pull origin main
-            
-            # Cấp quyền lại (đề phòng lỗi permission)
-            sudo chown -R $USER:$USER .
-            
-            # Restart các containers để áp dụng code mới (không build lại trừ khi đổi Dockerfile)
-            docker compose down
-            docker compose up -d --build
-            
-            # Dọn dẹp image cũ cho nhẹ server
-            docker image prune -f
+      - name: Cap nhat code va restart Docker
+        run: |
+          cd /cicd/Hotel_Management_Website
+          git pull origin main
+          docker compose down
+          docker compose up -d --build
+          docker image prune -f
