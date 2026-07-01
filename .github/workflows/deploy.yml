@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: self-hosted
-
+#ci/cd
     steps:
       - name: Cap nhat code va restart Docker
         run: |
@@ -17,4 +17,4 @@ jobs:
           git pull origin main
           docker compose down
           docker compose up -d --build
-          docker image prune -f
+          docker image prune -f 
