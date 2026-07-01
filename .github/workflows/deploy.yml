@@ -11,9 +11,11 @@ jobs:
     runs-on: self-hosted
 
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Cap nhat code va restart Docker
         run: |
-          cd /cicd/Hotel_Management_Website
           git pull origin main
           docker compose down
           docker compose up -d --build
