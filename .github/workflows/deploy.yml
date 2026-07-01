@@ -16,7 +16,7 @@ jobs:
 
       - name: Cap nhat code va restart Docker
         run: |
-          cd /xuan/Hotel_Management_Website
+         cd ~/xuan/Hotel_Management_Website
           git pull origin main
           docker compose down
           docker compose up -d --build
