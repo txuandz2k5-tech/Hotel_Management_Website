@@ -23,7 +23,7 @@ jobs:
           port: ${{ secrets.SERVER_PORT }} # Thường là 22
           script: |
             # Di chuyển vào thư mục dự án
-            cd /opt/Hotel_Management_Website
+            cd /cicd/Hotel_Management_Website
             
             # Kéo code mới nhất từ Github (nếu dùng Git trên server)
             git pull origin main
