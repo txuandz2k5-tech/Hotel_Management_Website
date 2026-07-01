@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: self-hosted
-#ci/cd
+
     steps:
       - name: Cap nhat code va restart Docker
         run: |
