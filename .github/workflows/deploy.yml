@@ -1,0 +1,18 @@
+name: CI/CD Pipeline - Docker Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Cap nhat code va restart Docker
+        run: |
+          cd /xuan/Hotel_Management_Website
+          git pull origin main
+          docker compose restart app
