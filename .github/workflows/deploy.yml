@@ -14,10 +14,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Cap nhat code va restart Docker
+      - name: Deploy with Docker
         run: |
-         cd ~/xuan/Hotel_Management_Website
-          git pull origin main
           docker compose down
           docker compose up -d --build
-          docker image prune -f 
+          docker image prune -f
