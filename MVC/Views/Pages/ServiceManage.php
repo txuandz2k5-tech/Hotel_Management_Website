@@ -1,3 +1,7 @@
+
+<!-- giao diện của chức năng quản lý dịch vụ -->
+ <!--Thêm giao diện của chức năng quản lý dịch vụ -->
+ <!-- thêm xuất excel cơ bản giao diện chức năng quản lý dịch vụ -->
 <main class="main-content">
 
     <section class="content-body">
@@ -24,7 +28,6 @@
             </div>
         </div>
 
-        <!-- Form thêm/sửa -->
         <div id="serviceForm" class="info-card" style="display: none; margin-top: 20px;">
             <h4 id="formTitle" style="color: var(--ocean-blue); margin-bottom: 15px;">Thêm dịch vụ mới</h4>
             <form id="mainServiceForm" action="?controller=ServiceController&action=saveService" method="POST">
@@ -33,7 +36,7 @@
                         <label>Mã Dịch Vụ *</label>
                         <input type="text" name="MaDichVu" id="MaDichVu" class="form-control" 
                                   placeholder="VD: DV001" required>
-                           <small style="color: var(--text-muted);">Nhập mã duy nhất cho dịch vụ</small>
+                           <small style="color: var(--text-muted);">Nhập mã cho dịch vụ</small>
                     </div>
                     <div class="form-group">
                         <label>Tên Dịch Vụ *</label>
@@ -60,7 +63,6 @@
             </form>
         </div>
 
-        <!-- Bảng dịch vụ -->
         <div class="table-container" style="margin-top: 20px;">
             <table class="admin-table">
                 <thead>
@@ -104,9 +106,9 @@
         </div>
     </section>
 </main>
-
+<!-- phần script -->
+ <!-- Phần script chủ yếu sử dụng cho trang -->
 <script>
-// Hiển thị form thêm mới
 function showAddForm() {
     const form = document.getElementById('serviceForm');
     const table = document.querySelector('.table-container');
@@ -116,7 +118,6 @@ function showAddForm() {
     table.style.display = 'none';
     toolbar.style.display = 'none';
     
-    // Reset form
     document.getElementById('isEdit').value = "0";
     document.getElementById('MaDichVu').value = "";
     document.getElementById('MaDichVu').placeholder = "Tự động tạo";
@@ -126,7 +127,6 @@ function showAddForm() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Ẩn form
 function hideForm() {
     const form = document.getElementById('serviceForm');
     const table = document.querySelector('.table-container');
@@ -136,10 +136,7 @@ function hideForm() {
     table.style.display = 'block';
     toolbar.style.display = 'flex';
 }
-
-// XỬ LÝ NÚT SỬA - Dùng Event Delegation
 document.addEventListener('DOMContentLoaded', function() {
-    // Xử lý nút Sửa
     document.querySelectorAll('.btn-icon.edit').forEach(button => {
         button.addEventListener('click', function() {
             const id = this.dataset.id;
@@ -147,14 +144,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const desc = this.dataset.desc;
             const price = this.dataset.price;
             
-            console.log('Edit clicked:', {id, name, desc, price}); // DEBUG
+            console.log('Edit clicked:', {id, name, desc, price}); 
             
-            // Hiển thị form
             document.getElementById('serviceForm').style.display = 'block';
             document.querySelector('.table-container').style.display = 'none';
             document.querySelector('.toolbar').style.display = 'none';
             
-            // Điền dữ liệu
             document.getElementById('formTitle').innerText = "Chỉnh sửa dịch vụ: " + name;
             document.getElementById('isEdit').value = "1";
             document.getElementById('MaDichVu').value = id;
@@ -167,27 +162,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Xử lý nút Xóa
     document.querySelectorAll('.btn-icon.delete').forEach(button => {
         button.addEventListener('click', function() {
             const id = this.dataset.id;
             const name = this.dataset.name;
             
-            console.log('Delete clicked:', {id, name}); // DEBUG
-            
+            console.log('Delete clicked:', {id, name}); 
             if (!id || id === '') {
                 alert('Lỗi: Không tìm thấy mã dịch vụ!');
                 return;
             }
             
             if (confirm(`Bạn có chắc chắn muốn xóa dịch vụ "${name}"?\n\nThao tác này không thể hoàn tác!`)) {
-                // Hiển thị loading
                 const overlay = document.createElement('div');
                 overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;display:flex;align-items:center;justify-content:center;';
                 overlay.innerHTML = '<div style="background:white;padding:30px;border-radius:10px;color:#333;"><i class="fas fa-spinner fa-spin" style="font-size:2rem;color:#3b82f6;"></i><p style="margin-top:10px;color:#333;">Đang xóa dịch vụ...</p></div>';
                 document.body.appendChild(overlay);
                 
-                // Chuyển hướng
                 window.location.href = `?controller=ServiceController&action=deleteService&id=${id}`;
             }
         });
