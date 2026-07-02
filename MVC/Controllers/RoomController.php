@@ -1,3 +1,8 @@
+<!-- lan 3 Hiệp đã Thêm tính năng quản lý hiển thị form thêm/sửa phòng và import Excel -->
+<!-- lan 4 Hiệp đã Thêm xác nhận lưu khi chỉnh sửa phòng -->
+ <!-- lan 4 Hiệp đã Thêm xác nhận xóa phòng để tránh xóa nhầm -->
+
+ <!-- lan 5 Hiệp đã Thêm xác nhận lưu khi chỉnh sửa phòng -->
 <?php
 class RoomController extends Controller {
 
