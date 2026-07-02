@@ -3,6 +3,9 @@
     <!-- Hiệp đã thêm tính năng tìm kiếm, xuất Excel và upload file Excel -->
      <!-- Hiệp đã thêm tính năng chỉnh sửa phòng và xác nhận lưu -->
 
+     <!-- lan 2 Hiệp đã sửa lại giao diện để dễ nhìn hơn, thêm màu sắc và biểu tượng -->
+      <!-- lan 2 Hiệp đã thêm xác nhận xóa phòng để tránh xóa nhầm -->
+
 
  
 
