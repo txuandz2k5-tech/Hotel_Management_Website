@@ -21,7 +21,7 @@ class EmployeeModel extends connectDB {
         return $this->select("SELECT MaBoPhan, TenBoPhan FROM hotels_departments");
     }
 
-    //Thêm và Sửa nhân viên
+    //Thêm và Sửa nhân viên mới 
     public function save($data, $isEdit) {
         $ma = mysqli_real_escape_string($this->con, $data['MaNhanVien']);
         $ho = mysqli_real_escape_string($this->con, $data['HoNhanVien']);
