@@ -106,7 +106,7 @@
         </div>
     </section>
 </main>
-
+<!-- phần script -->
 <script>
 function showAddForm() {
     const form = document.getElementById('serviceForm');
