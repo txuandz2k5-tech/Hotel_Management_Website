@@ -1,3 +1,16 @@
+
+    <!--Hiệp đã bổ sung tính năng cho Form quản lý phòng -->
+    <!-- Hiệp đã thêm tính năng tìm kiếm, xuất Excel và upload file Excel -->
+     <!-- Hiệp đã thêm tính năng chỉnh sửa phòng và xác nhận lưu -->
+
+     <!-- lan 2 Hiệp đã sửa lại giao diện để dễ nhìn hơn, thêm màu sắc và biểu tượng -->
+      <!-- lan 2 Hiệp đã thêm xác nhận xóa phòng để tránh xóa nhầm -->
+
+    <!-- lan 3 Hiệp đã sửa giao diện cho form thêm/sửa phòng -->
+    <!-- lan 3 Hiệp đã thêm xác nhận lưu khi chỉnh sửa phòng -->
+
+ 
+
 <main class="main-content">
     <header class="top-header">
         <div class="user-info">
@@ -39,7 +52,8 @@
                         <label>Mã Phòng (ID)</label>
                         <input type="text" name="MaPhong" id="MaPhong" class="form-control" placeholder="VD: P101" required>
                     </div>
-                    
+
+                     
                     <div class="form-group">
                         <label>Số Phòng (Tên hiển thị)</label>
                         <input type="text" name="SoPhong" id="SoPhong" class="form-control" placeholder="VD: Phòng 101" required>
