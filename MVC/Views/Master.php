@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Hotel Management Luxury website</title>
+    <title>Hệ Thống siêu khách sạn Hotel Luxury 12 sao chất lượng cao</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <?php
         $baseUrl = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
