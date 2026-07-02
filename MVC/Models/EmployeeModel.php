@@ -47,7 +47,7 @@ class EmployeeModel extends connectDB {
         return $this->execute($sql);
     }
 
-    // Xóa nhân viên
+    // Xóa nhân viên muốn xoá
     public function delete($id) {
         $id = mysqli_real_escape_string($this->con, $id);
         return $this->execute("DELETE FROM hotels_employees WHERE MaNhanVien = '$id'");
