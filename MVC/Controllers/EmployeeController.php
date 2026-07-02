@@ -2,7 +2,7 @@
 class EmployeeController extends controller {
     
     public function __construct() {
-        // Chỉ cho phép 'admin' truy cập
+        // Chỉ cho phép 'admin' truy cập vào hệ thống
         $this->requireRole(['admin']);
         
         $this->empModel = $this->model("EmployeeModel");
