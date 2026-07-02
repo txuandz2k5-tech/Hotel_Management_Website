@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Hệ Thống Khách Sạn</title>
+    <title>Hotel Management Luxury website</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <?php
         $baseUrl = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME']));
