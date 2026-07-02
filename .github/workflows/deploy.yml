@@ -1,0 +1,21 @@
+name: CI/CD Pipeline - Docker Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy with Docker
+        run: |
+          docker compose down
+          docker compose up -d --build
+          docker image prune -f
