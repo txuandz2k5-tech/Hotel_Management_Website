@@ -6,7 +6,8 @@
      <!-- lan 2 Hiệp đã sửa lại giao diện để dễ nhìn hơn, thêm màu sắc và biểu tượng -->
       <!-- lan 2 Hiệp đã thêm xác nhận xóa phòng để tránh xóa nhầm -->
 
-    
+    <!-- lan 3 Hiệp đã sửa giao diện cho form thêm/sửa phòng -->
+    <!-- lan 3 Hiệp đã thêm xác nhận lưu khi chỉnh sửa phòng -->
 
  
 
