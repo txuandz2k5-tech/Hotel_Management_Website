@@ -1,7 +1,8 @@
 <!-- Vanh đã thêm một form -->
  <!-- Vanh đã thêm một tính năng tìm kiếm  -->
 
- 
+  <!-- Vanh đã thêm một tính năng Thêm nhân viên  -->
+    <!-- Vanh đã thêm một tính năng Sửa nhân viên  -->
 <main class="main-content">
     <section class="content-body">
         <div class="toolbar" style="display: flex; justify-content: space-between; align-items: center;">
