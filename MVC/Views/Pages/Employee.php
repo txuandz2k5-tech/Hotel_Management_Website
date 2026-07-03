@@ -111,7 +111,8 @@
                 </div>
             </form>
         </div>
-
+ <!-- Vanh đã thêm một tính năng Thêm nhân viên  -->
+    <!-- Vanh đã thêm một tính năng Sửa nhân viên  -->
         <!-- Import Excel -->
         <div id="importForm" class="info-card" style="display:none;margin-top:20px;border:2px dashed #38bdf8;background:#1e293b;">
             <h4 style="color:#38bdf8;margin-bottom:15px;">
@@ -190,6 +191,10 @@
 </div>
     </section>
 </main>
+
+
+
+
 
 <script>
 function manageDisplay(active){
